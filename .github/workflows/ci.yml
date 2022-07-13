@@ -9,6 +9,7 @@ jobs:
       - name: Install AutoHotKey
         run: choco install autohotkey
       - name: Run tests
+        shell: cmd
         run: | 
           set PATH=%PATH%;C:\Program Files\AutoHotKey\autohotkey.exe
           autohotkey.exe /ErrorStdOut minescript.ahk
