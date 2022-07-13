@@ -9,9 +9,9 @@ jobs:
       - name: Install AutoHotKey
         run: choco install autohotkey
       - name: Run tests
-        env:
-          PATH: C:\Program Files\AutoHotkey\autohotkey.exe
-        run: autohotkey /ErrorStdOut minescript.ahk
+        run: | 
+          set PATH=%PATH%;C:\Program Files\AutoHotKey\autohotkey.exe
+          autohotkey.exe /ErrorStdOut minescript.ahk
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3
         if: always() # always run even if the previous step fails
